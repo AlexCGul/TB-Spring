@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0.0000023983105, z: -0.000008467834, w: 0.96215385}
-  m_LocalPosition: {x: -1.18, y: 16.065, z: -20.78}
+  m_LocalPosition: {x: 4.49, y: 25.130001, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 1328882868}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0, z: 0, w: 0.9621538}
-  m_LocalPosition: {x: -1.18, y: 16.065, z: -20.78}
+  m_LocalPosition: {x: 4.49, y: 25.130001, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1150,7 +1150,7 @@ Transform:
   m_GameObject: {fileID: 1486458390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.18, y: 1.065, z: 1.22}
+  m_LocalPosition: {x: 4.49, y: 10.13, z: 6}
   m_LocalScale: {x: 0.11, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1182,6 +1182,7 @@ MonoBehaviour:
     acceleration: 10
     maxSpeed: 25
   jumpForce: 250
+  slideVelocity: 1
   currentInput: {x: 0, y: 0, z: 0}
 --- !u!114 &1486458396
 MonoBehaviour:
