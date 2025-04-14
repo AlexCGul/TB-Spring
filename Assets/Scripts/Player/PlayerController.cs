@@ -62,6 +62,12 @@ public class PlayerController : MonoBehaviour
     
     void OnSprint(InputValue value)
     {
+        if (currentMovement == crouching)
+        {
+            StopCrouch();        
+        }
+        
+        
         if (value.isPressed)
         {
             currentMovement = running;
@@ -98,6 +104,39 @@ public class PlayerController : MonoBehaviour
     void OnCrouch(InputValue value)
     {
         
+        if (value.isPressed)
+        {
+            float oldHeight;
+            BoxCollider boxCollider = collider as BoxCollider;
+            
+            if (!boxCollider || currentMovement == crouching)
+            {
+                Debug.LogError("Collider is not a BoxCollider");
+                return;
+            }
+            
+            currentMovement = crouching;
+            oldHeight = boxCollider.size.y;
+            boxCollider.size = new Vector3(boxCollider.size.x, boxCollider.size.y * 0.5f, boxCollider.size.z);
+            boxCollider.center = new Vector3(boxCollider.center.x,boxCollider.center.y - (oldHeight * 0.25f), boxCollider.center.z);
+        
+            
+            return;
+        }
+        
+        StopCrouch();
+        
+    }
+
+
+    void StopCrouch()
+    {
+        BoxCollider boxCollider = collider as BoxCollider;
+
+        boxCollider.size = new Vector3(boxCollider.size.x, boxCollider.size.y * 2f, boxCollider.size.z);
+        boxCollider.center = new Vector3(boxCollider.center.x,boxCollider.center.y + (boxCollider.size.y * 0.25f), boxCollider.center.z);
+        
+        currentMovement = walking;
     }
 
 

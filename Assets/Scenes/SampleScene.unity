@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0.0000023983105, z: -0.000008467834, w: 0.96215385}
-  m_LocalPosition: {x: 4.49, y: 25.130001, z: -16}
+  m_LocalPosition: {x: 4.49, y: 19.07, z: -23.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 1328882868}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0, z: 0, w: 0.9621538}
-  m_LocalPosition: {x: 4.49, y: 25.130001, z: -16}
+  m_LocalPosition: {x: 4.49, y: 19.07, z: -23.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1150,7 +1150,7 @@ Transform:
   m_GameObject: {fileID: 1486458390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.49, y: 10.13, z: 6}
+  m_LocalPosition: {x: 4.49, y: 4.07, z: -1.93}
   m_LocalScale: {x: 0.11, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1176,13 +1176,15 @@ MonoBehaviour:
     acceleration: 2000
     maxSpeed: 6
   crouching:
-    acceleration: 10
-    maxSpeed: 25
+    acceleration: 1500
+    maxSpeed: 1.5
   currentMovement:
     acceleration: 10
     maxSpeed: 25
   jumpForce: 250
   slideVelocity: 1
+  slideUpBias: 2
+  movementPauseTime: 1
   currentInput: {x: 0, y: 0, z: 0}
 --- !u!114 &1486458396
 MonoBehaviour:
@@ -1260,7 +1262,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9.397203, y: 6.4210525, z: 7.788166}
+  m_Size: {x: 9.397203, y: 6.42, z: 7.788166}
   m_Center: {x: 0, y: 0.68, z: 0}
 --- !u!1 &2010946447
 GameObject:
