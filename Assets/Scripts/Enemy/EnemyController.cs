@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,6 +20,10 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        Vector3 dest = GetNextPatrolPoint();
+        agent.SetDestination(dest);
+        agent.isStopped = false;
+
         StartCoroutine(DetectPlayer());
         StartCoroutine(Patrol());
     }
@@ -26,16 +31,14 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator Patrol()
     {
-        Vector3 dest = GetNextPatrolPoint();
+        Vector3 dest = agent.destination;
         while (!playerDetected)
         {
             yield return new WaitForSeconds(0.5f);
-            if (Vector3.Distance(transform.position, dest) < 0.001f)
+            if (Vector3.Distance(transform.position, dest) < 1f)
             {
-                Debug.Log("DESTINATION REACHED " + Vector3.Distance(transform.position, dest ));
                 dest = GetNextPatrolPoint();
                 agent.SetDestination(dest);
-                Debug.Log("DESINATION SET TO " + dest);
             }
         }
 
@@ -46,6 +49,7 @@ public class EnemyController : MonoBehaviour
     {
         while (playerDetected)
         {
+            Debug.Log("CHASING");
             agent.SetDestination(player.position);
             yield return new WaitForSeconds(0.5f);
         }
@@ -53,6 +57,11 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(Patrol());
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 255, 0, 0.1f);
+        Gizmos.DrawSphere(transform.position, detectionRadius);
+    }
 
     IEnumerator DetectPlayer()
     {
@@ -63,19 +72,33 @@ public class EnemyController : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
             
+            // Declarations
             RaycastHit hit;
-            bool rayStraight = Physics.Raycast(transform.position, transform.position - player.transform.position, out hit, 10f);
-            bool rayTop = Physics.Raycast(transform.position + Vector3.up, transform.position - (player.transform.position + new Vector3(0,bc.size.y * 0.5f,0))
-                , out hit, 10f);
-            bool rayBottom = Physics.Raycast(transform.position + Vector3.up, transform.position - (player.transform.position - new Vector3(0,bc.size.y * 0.4f,0))
-                , out hit, 10f);
+            bool rayTop = false;
+            bool rayBottom = false;
             
-            
+            bool rayStraight = Physics.Raycast(transform.position, player.transform.position - transform.position
+                , out hit, detectionRadius*0.5f);
+            if (hit.collider && !hit.collider.CompareTag("Player"))
+            {
+                rayTop = Physics.Raycast(transform.position,
+                    (player.transform.position + new Vector3(0, bc.size.y * 0.5f, 0)) - transform.position
+                    , out hit, detectionRadius * 0.5f);
+            }
+
+            if (hit.collider && !hit.collider.CompareTag("Player"))
+            {
+                rayBottom = Physics.Raycast(transform.position,
+                    (player.transform.position - new Vector3(0, bc.size.y * 0.4f, 0)) - transform.position
+                    , out hit, detectionRadius * 0.5f);
+            }
+
+
             // Draw the detection lines for debugging
             #if UNITY_EDITOR
-            Debug.DrawRay(transform.position, transform.position - player.transform.position, Color.red);
-            Debug.DrawRay(transform.position + Vector3.up, transform.position - (player.transform.position + new Vector3(0,bc.size.y * 0.5f,0)), Color.red);
-            Debug.DrawRay(transform.position + Vector3.up, transform.position - (player.transform.position - new Vector3(0,bc.size.y * 0.4f,0)), Color.red);
+            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red, 2f);
+            Debug.DrawRay(transform.position, (player.transform.position + new Vector3(0,bc.size.y * 0.5f,0)) - transform.position, Color.red, 2f);
+            Debug.DrawRay(transform.position, (player.transform.position - new Vector3(0,bc.size.y * 0.4f,0)) - transform.position, Color.red, 2f);
             #endif
             
             if (rayStraight || rayBottom || rayTop)
@@ -83,10 +106,21 @@ public class EnemyController : MonoBehaviour
                 if (lostVisual)
                     lostVisual = false;
                 
-                if (hit.collider.CompareTag("Player"))
+                if (hit.collider && hit.collider.CompareTag("Player"))
                 {
+                    Debug.Log("Player detected");
                     playerDetected = true;
                     StartCoroutine(ChasePlayer(hit.transform));
+
+                    #if UNITY_EDITOR
+                    Debug.Log("START CHASE");
+                    #endif
+                }
+                
+                else if (playerDetected == true && !lostVisual)
+                {
+                    Debug.Log("LOST VISUAL");
+                    StartCoroutine(LostVisualCoolDown());
                 }
 
                 continue;
@@ -103,10 +137,13 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(lostVisualTimer);
 
         if (!lostVisual) yield break;
-        
+                
         playerDetected = false;
         lostVisual = false;
-        agent.SetDestination(GetNextPatrolPoint());
+
+        #if UNITY_EDITOR
+        Debug.Log(("LOST VISUAL"));
+        #endif
     }
 
 
