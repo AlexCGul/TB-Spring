@@ -8,6 +8,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
+    
     [Header("States")]
     [SerializeField] private MovementParams walking;
     [SerializeField] private MovementParams running;
@@ -34,9 +36,25 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        
         rb = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
         currentMovement = walking;
+    }
+
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     void OnMove(InputValue value)
