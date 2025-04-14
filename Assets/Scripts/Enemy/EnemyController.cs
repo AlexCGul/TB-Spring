@@ -49,7 +49,9 @@ public class EnemyController : MonoBehaviour
     {
         while (playerDetected)
         {
+        #if UNITY_EDITOR
             Debug.Log("CHASING");
+        #endif
             agent.SetDestination(player.position);
             yield return new WaitForSeconds(0.5f);
         }
@@ -108,7 +110,6 @@ public class EnemyController : MonoBehaviour
                 
                 if (hit.collider && hit.collider.CompareTag("Player"))
                 {
-                    Debug.Log("Player detected");
                     playerDetected = true;
                     StartCoroutine(ChasePlayer(hit.transform));
 
@@ -119,14 +120,10 @@ public class EnemyController : MonoBehaviour
                 
                 else if (playerDetected == true && !lostVisual)
                 {
-                    Debug.Log("LOST VISUAL");
                     StartCoroutine(LostVisualCoolDown());
                 }
-
-                continue;
             }
 
-            //StartCoroutine(LostVisualCoolDown());
         }
     }
 
