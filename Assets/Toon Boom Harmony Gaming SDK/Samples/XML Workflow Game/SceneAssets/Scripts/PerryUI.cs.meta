@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b1b019109ffa9774188a5561d9c84c1a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/XML Workflow Game/SceneAssets/Scripts/PerryUI.cs
+  uploadId: 668853

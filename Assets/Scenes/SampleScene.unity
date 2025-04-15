@@ -1991,9 +1991,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583148495770467364, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740264867997252164, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2352969703920581787, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771446445458037251, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2034,6 +2046,18 @@ PrefabInstance:
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818910980124647017, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262883860615655240, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211492298329758973, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8840091817725709621, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: objectives.Array.size

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 72a26cfa2d415ec45813cd2fb35a5856
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4343727234628468602
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/TBG Workflow Game/Level/SLY_Level_Props
+    Atlas.asset
+  uploadId: 668853

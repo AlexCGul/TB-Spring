@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bfb4c012b043877469649301b161346a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 31900000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/TBG Workflow Game/Level/SLY_Character_Arms_And_Head.mask
+  uploadId: 668853

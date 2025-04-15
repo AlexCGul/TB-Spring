@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24e666e99687d7b43bb1394049724240
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/XML Workflow Game/SceneAssets/Materials/Checker.mat
+  uploadId: 668853

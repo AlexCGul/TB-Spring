@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4a9716e2e7e807c4f95c32aaf903bb75
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Editor/TBG Importer/EditorCools/LICENSE.txt
+  uploadId: 668853

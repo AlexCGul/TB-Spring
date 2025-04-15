@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 66efb8d1ed687614e98fb634f0025d68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/XML Workflow Game/Imported/Animations/PerryProject.controller
+  uploadId: 668853

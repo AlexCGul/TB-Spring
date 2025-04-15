@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fe3b8711fd3f5b649bff707706407ae5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/XML Workflow Game/Imported/Animations/PerryPoireau_idle_item.anim
+  uploadId: 668853

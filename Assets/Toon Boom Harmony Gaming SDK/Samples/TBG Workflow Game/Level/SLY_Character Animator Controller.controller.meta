@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a7219fb361634b34681cfa325cc950e7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Samples/TBG Workflow Game/Level/SLY_Character
+    Animator Controller.controller
+  uploadId: 668853

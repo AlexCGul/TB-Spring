@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fb10e62a43f1db8459adb8cd16f0ff38
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197705
+  packageName: Harmony 24 Gaming SDK
+  packageVersion: 2.1.0
+  assetPath: Assets/Toon Boom Harmony Gaming SDK/Runtime/HarmonyRenderer/ToonBoom.HarmonySDK.asmdef
+  uploadId: 668853
