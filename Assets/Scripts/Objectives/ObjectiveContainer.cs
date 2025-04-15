@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectiveContainer : MonoBehaviour
@@ -8,6 +9,18 @@ public class ObjectiveContainer : MonoBehaviour
     void Start()
     {
         objectives.Clear();
+    }
+
+
+    public void AttemptCompletePickupTask(Pickup pickup)
+    {
+        foreach (Objective objective in objectives)
+        {
+            if (objective.CompleteByName("Pickup " + pickup.name))
+            {
+                break;
+            }
+        }
     }
     
     

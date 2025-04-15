@@ -15,6 +15,6 @@ MonoBehaviour:
   objectiveName: Get Test
   tasks:
   - isCompleted: 0
-    taskName: PickupTest
+    taskName: Pickup Test
   - isCompleted: 0
     taskName: Bring test to test character
