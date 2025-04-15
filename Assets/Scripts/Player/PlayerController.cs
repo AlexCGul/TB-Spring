@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slideVelocity = 5f;
     [SerializeField] private float slideUpBias = 2.0f;
     [SerializeField] private float movementPauseTime = 1f;
+    [SerializeField] public string characterName = "Player";
 
     // components and tracker variables
     private Rigidbody rb;

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyController : MonoBehaviour
 {
@@ -78,7 +80,14 @@ public class EnemyController : MonoBehaviour
             RaycastHit hit;
             bool rayTop = false;
             bool rayBottom = false;
+
+            // If the player is too far away no point in checking against rays
+            if (Vector3.Distance(gameObject.transform.position, player.transform.position) > detectionRadius*0.6f)
+            {
+                continue;
+            }
             
+            // Draw detection rays
             bool rayStraight = Physics.Raycast(transform.position, player.transform.position - transform.position
                 , out hit, detectionRadius*0.5f);
             if (hit.collider && !hit.collider.CompareTag("Player"))
