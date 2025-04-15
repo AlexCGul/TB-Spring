@@ -27,6 +27,8 @@ public class Dialogable : MonoBehaviour, IInteractable
             // Move to the next node
             currentNode = currentNode.GetNextNode(0);
         }
+        
+        dialog.DialogFinished();
     }
 
     public void Interact()

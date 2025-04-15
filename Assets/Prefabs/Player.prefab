@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6505971446042502330}
-  - component: {fileID: 8891752165305005928}
-  - component: {fileID: 5717763101701171482}
-  - component: {fileID: 8052507841203126352}
   - component: {fileID: 3618217040162103647}
+  - component: {fileID: 8891752165305005928}
+  - component: {fileID: 8052507841203126352}
+  - component: {fileID: 5717763101701171482}
+  - component: {fileID: 8840091817725709621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36,6 +37,27 @@ Transform:
   - {fileID: 2608249457338890895}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3618217040162103647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352969703920581787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1672001, y: 0.79949236, z: 1.2979286}
+  m_Center: {x: 0.028531075, y: 0.06810784, z: -0.008719683}
 --- !u!54 &8891752165305005928
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -63,35 +85,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5717763101701171482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2352969703920581787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a302cba24679e4f8fceed9ff132c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walking:
-    acceleration: 1500
-    maxSpeed: 3
-  running:
-    acceleration: 2000
-    maxSpeed: 6
-  crouching:
-    acceleration: 1500
-    maxSpeed: 1.5
-  currentMovement:
-    acceleration: 10
-    maxSpeed: 25
-  jumpForce: 250
-  slideVelocity: 1
-  slideUpBias: 2
-  movementPauseTime: 1
-  currentInput: {x: 0, y: 0, z: 0}
 --- !u!114 &8052507841203126352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,27 +115,49 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!65 &3618217040162103647
-BoxCollider:
+--- !u!114 &5717763101701171482
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2352969703920581787}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1672001, y: 0.79949236, z: 1.2979286}
-  m_Center: {x: 0.028531075, y: 0.06810784, z: -0.008719683}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a302cba24679e4f8fceed9ff132c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walking:
+    acceleration: 1500
+    maxSpeed: 3
+  running:
+    acceleration: 2000
+    maxSpeed: 6
+  crouching:
+    acceleration: 1500
+    maxSpeed: 1.5
+  currentMovement:
+    acceleration: 10
+    maxSpeed: 25
+  jumpForce: 250
+  slideVelocity: 1
+  slideUpBias: 2
+  movementPauseTime: 1
+  characterName: Player
+  currentInput: {x: 0, y: 0, z: 0}
+--- !u!114 &8840091817725709621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352969703920581787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac47fda36bd3244d8832b3cfedd9aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: []
 --- !u!1 &4180637283703864101
 GameObject:
   m_ObjectHideFlags: 0
