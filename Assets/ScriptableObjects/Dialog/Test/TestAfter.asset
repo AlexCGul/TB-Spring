@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62829c3439240194fba7e18d26c101ab, type: 3}
-  m_Name: TestObjective
+  m_Script: {fileID: 11500000, guid: 50f522dfc2ec7a64dbe3b4e5888dd741, type: 3}
+  m_Name: TestAfter
   m_EditorClassIdentifier: 
-  objectiveName: Get Test
-  tasks:
-  - taskName: Pickup Test
-  - taskName: Bring Test back to character
+  startNode:
+    dialog: Thankyou!
+    nextNodes: []
+  speakerName: TestCharacter
+  onDialogStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogEnd:
+    m_PersistentCalls:
+      m_Calls: []

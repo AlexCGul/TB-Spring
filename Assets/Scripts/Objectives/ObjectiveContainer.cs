@@ -7,6 +7,7 @@ public delegate void ObjectiveAdded(Objective objective);
 public class ObjectiveContainer : MonoBehaviour
 {
     [SerializeField] private Objective objective;
+    Inventory inventory;
     public Objective GetActiveObjective => objective;
     
     public ObjectiveAdded OnObjectiveAdded;
@@ -14,12 +15,22 @@ public class ObjectiveContainer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        inventory = GetComponent<Inventory>();
     }
 
 
     public void AttemptCompletePickupTask(Pickup pickup)
     {
         objective.CompleteByName("Pickup " + pickup.name);
+    }
+    
+    
+    public bool AttemptCompleteDeliveryTask()
+    {
+        if (!inventory.GetHeld())
+            return false;
+        
+        return objective.CompleteByName("Bring " + inventory.GetHeld().name);
     }
     
     

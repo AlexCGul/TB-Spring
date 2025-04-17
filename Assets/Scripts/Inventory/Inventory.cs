@@ -34,9 +34,12 @@ public class Inventory : MonoBehaviour
 
     public void PickupItem(Pickup pickup)
     {
+        
         if (heldItem || !heldItemContainer)
         {
+            #if UNITY_EDITOR
             Debug.Log("Already holding an item or gameobject not valid");
+            #endif
             return;
         }
         
@@ -44,12 +47,24 @@ public class Inventory : MonoBehaviour
         Debug.Log("Picked up item");
         #endif
         
+        // update UI
+        if (InventoryView.iv != null)
+        {
+            InventoryView.iv.Pickup(pickup);
+        }
+        
         heldItem = pickup;
         heldItem.transform.parent = heldItemContainer.transform;
         heldItem.transform.localPosition = Vector3.zero;
         
         if (heldItem.rb)
             heldItem.rb.isKinematic = true;
+    }
+
+
+    public Pickup GetHeld()
+    {
+        return heldItem;
     }
 
     public void DropItem()

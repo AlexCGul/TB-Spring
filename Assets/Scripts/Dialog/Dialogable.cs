@@ -3,19 +3,39 @@ using UnityEngine;
 
 public class Dialogable : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Dialog dialog;
+    private ObjectiveContainer oc;
+    [SerializeField] private Dialog[] questDialog;
+    [SerializeField] int dialogIndex = 0;
+    [SerializeField] private bool questComplete = false;
     DialogNode currentNode;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        oc = PlayerController.Instance.GetComponent<ObjectiveContainer>();
     }
 
 
     IEnumerator StartDialog()
     {
-        currentNode = dialog.GetStartNode();
+        switch (dialogIndex)
+        {
+            case 1:
+                if (oc.AttemptCompleteDeliveryTask())
+                {
+                    dialogIndex = 1;
+                    questComplete = true;
+                }
+                break;
+            
+            case 2:
+                if (!questComplete)
+                    dialogIndex = 1;
+                break;
+        }
+        
+        
+        currentNode = questDialog[dialogIndex].GetStartNode();
         while (currentNode is not null)
         { 
             #if UNITY_EDITOR
@@ -26,10 +46,11 @@ public class Dialogable : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(1f);
             
             // Move to the next node
-            currentNode = currentNode.GetNextNode(0);
+            currentNode = currentNode?.GetNextNode(0);
         }
         
-        dialog.DialogFinished();
+        questDialog[dialogIndex].DialogFinished();
+        dialogIndex += dialogIndex < 2 ? 1 : 0;
     }
 
     public void Interact()
