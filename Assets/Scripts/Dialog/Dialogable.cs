@@ -16,7 +16,7 @@ public class Dialogable : MonoBehaviour, IInteractable
     }
 
 
-    IEnumerator StartDialog()
+    void StartDialog()
     {
         switch (dialogIndex)
         {
@@ -26,36 +26,22 @@ public class Dialogable : MonoBehaviour, IInteractable
                     dialogIndex = 1;
                     questComplete = true;
                 }
+
                 break;
-            
+
             case 2:
                 if (!questComplete)
                     dialogIndex = 1;
                 break;
         }
-        
-        
-        currentNode = questDialog[dialogIndex].GetStartNode();
-        while (currentNode is not null)
-        { 
-            #if UNITY_EDITOR
-            // Display dialog
-            Debug.Log(currentNode.dialog);
-            #endif
 
-            yield return new WaitForSeconds(1f);
-            
-            // Move to the next node
-            currentNode = currentNode?.GetNextNode(0);
-        }
-        
-        questDialog[dialogIndex].DialogFinished();
+        DialogUI.instance.StartInteraction(gameObject, questDialog[dialogIndex]);
         dialogIndex += dialogIndex < 2 ? 1 : 0;
     }
 
     public void Interact()
     {
-        StartCoroutine(StartDialog());
+        StartDialog();
     }
 
     public bool IsInteractable(GameObject interactingCharacter)

@@ -1,6 +1,15 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ObjectiveView name="ObjectiveView" tasks="Collect Coffee,Bring Coffee To Dave" style="align-self: flex-start; min-width: 15%; min-height: 20%; margin-top: 2%; margin-right: 2%; margin-bottom: 2%; margin-left: 2%; max-height: 25%;" />
-    <engine:VisualElement style="flex-grow: 1; justify-content: flex-end;">
-        <InventoryView style="align-self: flex-end; margin-top: 2%; margin-right: 2%; margin-bottom: 2%; margin-left: 2%; min-width: 100px; min-height: 100px; align-items: stretch; max-width: 15%; max-height: 15%;" />
+    <Style src="project://database/Assets/UI/Resources/GUIElement.uss?fileID=7433441132597879392&amp;guid=09f642d7d7764bf48be06226a772c200&amp;type=3#GUIElement" />
+    <engine:VisualElement name="GUI" style="flex-grow: 1; position: absolute; width: 100%; height: 100%;">
+        <ObjectiveView name="ObjectiveView" tasks="Collect Coffee,Bring Coffee To Dave" style="align-self: flex-start; min-width: 15%; min-height: 20%; margin-top: 2%; margin-right: 2%; margin-bottom: 2%; margin-left: 2%; max-height: 25%;" />
+        <engine:VisualElement style="flex-grow: 1; justify-content: flex-end;">
+            <InventoryView style="align-self: flex-end; margin-top: 2%; margin-right: 2%; margin-bottom: 2%; margin-left: 2%; min-width: 100px; min-height: 100px; align-items: stretch; max-width: 15%; max-height: 15%;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+    <engine:VisualElement name="Dialog" style="flex-grow: 1; position: absolute; width: 100%; height: 100%;">
+        <engine:VisualElement class="GUIElement" style="flex-grow: 1; max-width: 25%; max-height: 25%; width: 5%; height: 5%; min-width: 15%; min-height: 5%; align-self: center;">
+            <engine:Label text="Label" name="Name" class="GUI_TextBase" />
+            <engine:Label text="Label" name="Body" class="GUI_SubText" />
+        </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
