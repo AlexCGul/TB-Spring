@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Build;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ public class Objective : ScriptableObject
     {
         for (int i = 0; i < tasks.Length; i++)
         {
-            if (tasks[i].isCompleted) continue;
-            tasks[i].isCompleted = true;
+            if (tasks[i].IsCompleted) continue;
+            tasks[i].IsCompleted = true;
             break;
         }
     }
@@ -22,8 +23,8 @@ public class Objective : ScriptableObject
     {
         for (int i = 0; i < tasks.Length; i++)
         {
-            if (tasks[i].isCompleted) continue;
-            tasks[i-1].isCompleted = true;
+            if (tasks[i].IsCompleted) continue;
+            tasks[i-1].IsCompleted = true;
             break;
         }
     }
@@ -33,7 +34,7 @@ public class Objective : ScriptableObject
     {
         for (int i = 0; i < tasks.Length; i++)
         {
-            if (!tasks[i].isCompleted)
+            if (!tasks[i].IsCompleted)
             {
                 return tasks[i];
             }
@@ -47,14 +48,14 @@ public class Objective : ScriptableObject
     {
         foreach (Task task in tasks)
         {
-            if (task.isCompleted) continue;
+            if (task.IsCompleted) continue;
             if (task.taskName.Contains(itemName))
             {
                 #if UNITY_EDITOR
                 Debug.Log($"Objective {objectiveName} completed by {itemName}");
                 #endif
                 
-                task.isCompleted = true;
+                task.IsCompleted = true;
                 return true;
             }
         }
@@ -67,10 +68,10 @@ public class Objective : ScriptableObject
     {
         foreach (Task task in tasks)
         {
-            if (!task.isCompleted) continue;
+            if (!task.IsCompleted) continue;
             if (task.taskName == itemName)
             {
-                task.isCompleted = false;
+                task.IsCompleted = false;
                 break;
             }
         }

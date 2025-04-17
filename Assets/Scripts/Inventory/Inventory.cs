@@ -18,14 +18,18 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         heldItem = null;
-        heldItemContainer = new GameObject("HeldItemContainer")
+
+        if (!heldItemContainer)
         {
-            transform =
+            heldItemContainer = new GameObject("HeldItemContainer")
             {
-                parent = transform,
-                localPosition = heldItemOffset
-            }
-        };
+                transform =
+                {
+                    parent = transform,
+                    localPosition = heldItemOffset
+                }
+            };
+        }
     }
 
     public void PickupItem(Pickup pickup)

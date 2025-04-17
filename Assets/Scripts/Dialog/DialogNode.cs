@@ -1,10 +1,11 @@
 using System;
+using UnityEngine;
 
 [Serializable]
 public class DialogNode
 {
     public string dialog;
-    DialogNode[] nextNodes;
+    [SerializeField] DialogNode[] nextNodes;
 
     public DialogNode GetNextNode(int index)
     {

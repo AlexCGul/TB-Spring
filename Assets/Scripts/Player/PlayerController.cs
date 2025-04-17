@@ -8,7 +8,23 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Instance { get; private set; }
+     static PlayerController instance { get; set; }
+    public static PlayerController Instance
+    {
+        get
+        {
+            return instance;
+        }
+
+        private set
+        {
+            instance = value;
+            OnInitialize?.Invoke();
+        }
+    }
+    
+    
+    public static event Action OnInitialize;
     
     [Header("States")]
     [SerializeField] private MovementParams walking;
@@ -25,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     // components and tracker variables
     private Rigidbody rb;
+    private Animator animator;
     Collider collider;
     [SerializeField] private Vector3 currentInput;
     
@@ -43,18 +60,20 @@ public class PlayerController : MonoBehaviour
             return;
         }
         Instance = this;
-        
+
         rb = GetComponent<Rigidbody>();
+        animator = transform.GetChild(1).GetComponent<Animator>();
         collider = GetComponent<Collider>();
         currentMovement = walking;
     }
-
+    
 
     private void OnDestroy()
     {
         if (Instance == this)
         {
             Instance = null;
+            Debug.Log("Instance cleared");
         }
     }
 
@@ -63,6 +82,8 @@ public class PlayerController : MonoBehaviour
         currentInput = value.Get<Vector2>();
         currentInput = new Vector3(currentInput.x, 0, currentInput.y);
         
+        animator.SetFloat("VerticalInput", currentInput.z);
+        animator.SetFloat("HorizontalInput", currentInput.x);
         if (!moving)
         {
             moving = true;
@@ -240,4 +261,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(movementPauseTime);
         noMove = false;
     }
+    
+    
+    
 }

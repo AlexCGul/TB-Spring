@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ObjectiveView name="ObjectiveView" tasks="Collect Coffee,Bring Coffee To Dave" style="align-self: flex-start; min-width: 15%; min-height: 20%; margin-top: 2%; margin-right: 2%; margin-bottom: 2%; margin-left: 2%; max-height: 25%;" />
+    <engine:VisualElement style="flex-grow: 1; justify-content: flex-end;">
+        <InventoryView style="align-self: flex-end; margin-top: 2%; margin-right: 2%; margin-bottom: 2%; margin-left: 2%; min-width: 100px; min-height: 100px; align-items: stretch; max-width: 15%; max-height: 15%;" />
+    </engine:VisualElement>
+</engine:UXML>

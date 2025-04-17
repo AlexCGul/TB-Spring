@@ -15,6 +15,7 @@ public class Dialogable : MonoBehaviour, IInteractable
 
     IEnumerator StartDialog()
     {
+        currentNode = dialog.GetStartNode();
         while (currentNode is not null)
         { 
             #if UNITY_EDITOR
@@ -33,7 +34,6 @@ public class Dialogable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        currentNode = dialog.GetStartNode();
         StartCoroutine(StartDialog());
     }
 
