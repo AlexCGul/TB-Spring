@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368e476861db82d4ea182fbd1f74e12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textWriteSpeed: 0.25
+  textWriteSpeed: 0.05
   talkingActor: {fileID: 0}
 --- !u!1 &589809217
 GameObject:

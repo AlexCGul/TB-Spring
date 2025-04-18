@@ -8,7 +8,7 @@
         </engine:VisualElement>
     </engine:VisualElement>
     <engine:VisualElement name="Dialog" style="flex-grow: 1; position: absolute; width: 100%; height: 100%;">
-        <engine:VisualElement class="GUIElement" style="flex-grow: 1; max-width: 25%; max-height: 25%; width: 5%; height: 5%; min-width: 15%; min-height: 5%; align-self: center;">
+        <engine:VisualElement name="DialogBox" class="GUIElement" style="flex-grow: 1; max-width: 25%; max-height: 25%; width: 5%; height: 5%; min-width: 250px; min-height: 150px; position: absolute;">
             <engine:Label text="Label" name="Name" class="GUI_TextBase" />
             <engine:Label text="Label" name="Body" class="GUI_SubText" />
         </engine:VisualElement>

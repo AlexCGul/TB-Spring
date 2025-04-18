@@ -29,6 +29,7 @@ public class InteractionManager : MonoBehaviour
         interactionWidgetsRoot = document.GetComponent<UIDocument>().rootVisualElement.Q("InteractWidgets");
 
         StartCoroutine(CheckIfInteractable());
+        StartCoroutine(UpdateWidgets());
         
         #if UNITY_EDITOR
         Debug.Log("Interactables found: " + interactables.Count);
@@ -109,12 +110,21 @@ public class InteractionManager : MonoBehaviour
                 }
                 
             }
-            
+        }
+    }
+
+
+    IEnumerator UpdateWidgets()
+    {
+        while (gameObject)
+        {
             // update all widgets
             for (int i = 0; i < widgets.Count; i++)
             {
                 widgets[i].Update();
             }
+
+            yield return new WaitForFixedUpdate();
         }
     }
     

@@ -12,6 +12,7 @@ public class DialogUI : MonoBehaviour
     private PlayerInput input;
     private VisualElement dialogRoot;
     private DialogNode currentNode;
+    private Dialog currentDialog;
     
     private Label body;
     private Label title;
@@ -52,11 +53,19 @@ public class DialogUI : MonoBehaviour
         
         // Setup refs
         talkingActor = actor;
+        currentDialog = dialog;
         
         // setup textbox
         title.text = dialog.name;
         currentNode = dialog.GetStartNode();
         dialogRoot.style.display = DisplayStyle.Flex;
+        Camera cam = Camera.main;
+        
+        // Set box position
+        VisualElement dialogBox = dialogRoot.Q("DialogBox");
+        Vector3 screenPos = cam.WorldToScreenPoint(actor.transform.position);
+        dialogBox.style.left = new StyleLength(new Length(screenPos.x, LengthUnit.Pixel));
+        dialogBox.style.top = new StyleLength(new Length(cam.pixelHeight - screenPos.y, LengthUnit.Pixel));
         TriggerNextNode();
 
         
@@ -82,19 +91,24 @@ public class DialogUI : MonoBehaviour
 
     void TriggerNextNode()
     {
-        StartCoroutine(WriteText(currentNode.dialog, body));
-        currentNode = currentNode.GetNextNode(0);
-
         if (currentNode == null)
         {
             EndDialog();
+            return;
         }
+        
+        StartCoroutine(WriteText(currentNode.dialog, body));
+        currentNode = currentNode.GetNextNode(0);
     }
 
 
     void EndDialog()
     {
         dialogRoot.style.display = DisplayStyle.None;
+        
+        // Cleanup refs
+        currentDialog.DialogFinished();
+        currentNode = null;
         talkingActor = null;
         
         InputActionMap uiMap = input.actions.FindActionMap("UI");
