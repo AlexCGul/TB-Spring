@@ -946,6 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24968f2a62230e741910d81ab05a95bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  document: {fileID: 500975516}
   standardInteractionDistance: 5
 --- !u!4 &589809219
 Transform:
