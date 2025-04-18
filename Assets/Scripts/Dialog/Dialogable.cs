@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Dialogable : MonoBehaviour, IInteractable
 {
@@ -8,6 +9,8 @@ public class Dialogable : MonoBehaviour, IInteractable
     [SerializeField] int dialogIndex = 0;
     [SerializeField] private bool questComplete = false;
     DialogNode currentNode;
+    
+    [SerializeField] UnityEvent onSatisfied;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +28,7 @@ public class Dialogable : MonoBehaviour, IInteractable
                 {
                     dialogIndex = 1;
                     questComplete = true;
+                    onSatisfied?.Invoke();
                 }
 
                 break;
