@@ -446,6 +446,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: inAir.maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: running.maxSpeed
       value: 7
       objectReference: {fileID: 0}
@@ -456,6 +460,10 @@ PrefabInstance:
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: crouching.maxSpeed
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: inAir.acceleration
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.x

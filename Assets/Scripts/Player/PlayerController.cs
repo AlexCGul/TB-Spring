@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("States")]
     [SerializeField] private MovementParams walking;
+    [SerializeField] private MovementParams inAir;
     [SerializeField] private MovementParams running;
     [SerializeField] private MovementParams crouching;
     [SerializeField] MovementParams currentMovement;
@@ -42,12 +43,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public string characterName = "Player";
 
     // components and tracker variables
+    Collider collider;
     private Rigidbody rb;
     private Animator animator;
-    Collider collider;
-    [SerializeField] private Vector3 currentInput;
     
     // State tracking
+    [SerializeField] private Vector3 currentInput;
     private bool moving = false;
     private bool noMove = false;
     private bool sliding = false;
@@ -192,12 +193,25 @@ public class PlayerController : MonoBehaviour
                 continue;
             }
             
-            rb.AddForce(currentInput * (currentMovement.acceleration * Time.deltaTime), ForceMode.Acceleration);
+            float acceleration = currentMovement.acceleration;
+            float maxSpeed = currentMovement.maxSpeed;
+            if (!IsGrounded())
+            {
+                acceleration = inAir.acceleration;
+                maxSpeed = inAir.maxSpeed;
+            }
+            
+            
+            // Horizontal plane movement
+            float xSpeed = rb.linearVelocity.x + (acceleration * currentInput.x * Time.deltaTime);
+            float zSpeed = rb.linearVelocity.z + (acceleration * currentInput.z * Time.deltaTime);
+            
+            xSpeed = Mathf.Clamp(xSpeed, -maxSpeed, maxSpeed);
+            zSpeed = Mathf.Clamp(zSpeed, -maxSpeed, maxSpeed);
             
             // perserves the vertical speed
             float ySpeed = rb.linearVelocity.y;
-            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, currentMovement.maxSpeed);
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, ySpeed, rb.linearVelocity.z);
+            rb.linearVelocity = new Vector3(xSpeed, ySpeed, zSpeed);
             
             yield return new WaitForFixedUpdate();
         }
@@ -233,6 +247,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.VelocityChange);
         }
+        
+        // pause the movement for a bit to let hop occur
+        StartCoroutine(PauseMovement());
     }
     
     
@@ -242,13 +259,18 @@ public class PlayerController : MonoBehaviour
         // if the player is not on a wall, don't slide
         if (!(cachedWallNormal.x != 0 || cachedWallNormal.z != 0 || IsGrounded()))
             yield break;
-
-        // pause the movement for a bit to let hop occur
-        StartCoroutine(PauseMovement());
         
         sliding = true;
         while (sliding)
         {
+            // Check if player wants to leave slide
+            bool x = Mathf.Abs(currentInput.x) > 0 && Mathf.Approximately(currentInput.x, cachedWallNormal.x);
+            bool y = Mathf.Abs(currentInput.y) > 0 && Mathf.Approximately(currentInput.y, cachedWallNormal.z);
+            if ( x || y )
+            {
+                sliding = false;
+            }
+            
             // set slide to set speed
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, -slideVelocity, rb.linearVelocity.z);
             yield return new WaitForFixedUpdate();
