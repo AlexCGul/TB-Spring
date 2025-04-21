@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     [SerializeField] private float slideVelocity = 5f;
     [SerializeField] private float slideUpBias = 2.0f;
+    [SerializeField] private float hopUpBias = 5f;
+    [SerializeField] private float wallHopForce = 50f;
     [SerializeField] private float movementPauseTime = 1f;
     [SerializeField] public string characterName = "Player";
 
@@ -229,7 +231,7 @@ public class PlayerController : MonoBehaviour
         // hop off a wall
         if (cachedWallNormal.x != 0 || cachedWallNormal.z != 0)
         {
-            rb.AddForce(jumpForce * cachedWallNormal + (Vector3.up * slideVelocity), ForceMode.Acceleration);
+            rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.VelocityChange);
         }
     }
     

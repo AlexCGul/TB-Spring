@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 312390525}
   - component: {fileID: 312390524}
   m_Layer: 0
-  m_Name: CinemachineCamera (1)
+  m_Name: CinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,12 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackerSettings:
-    BindingMode: 4
+    BindingMode: 2
     PositionDamping: {x: 1, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 15, z: -22}
+  FollowOffset: {x: 0, y: 19.809746, z: -30.20805}
 --- !u!114 &312390525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 312390523}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0, z: 0, w: 0.9621538}
-  m_LocalPosition: {x: 10.62, y: 15.3, z: -23.93}
+  m_LocalPosition: {x: 26.4, y: 20.299746, z: -97.00806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -417,21 +417,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3618217040162103647, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85921586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618217040162103647, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_Center.y
+      value: 0.03824611
+      objectReference: {fileID: 0}
     - target: {fileID: 4771446445458037251, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: hopUpBias
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: jumpForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: wallHopForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: slideVelocity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: running.maxSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: walking.maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: crouching.maxSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.62
+      value: 26.4
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.93
+      value: -66.8
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -642,7 +678,7 @@ Transform:
   m_GameObject: {fileID: 1723686734}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0, z: 0, w: 0.9621538}
-  m_LocalPosition: {x: 10.62, y: 15.3, z: -23.93}
+  m_LocalPosition: {x: 26.4, y: 20.299746, z: -97.00806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
