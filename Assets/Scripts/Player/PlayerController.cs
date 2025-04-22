@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Numerics;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Vector2 = UnityEngine.Vector2;
@@ -33,18 +34,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private MovementParams crouching;
     [SerializeField] MovementParams currentMovement;
     
-    [Header("Adjustable Parameters")]
-    [SerializeField] float jumpForce = 5f;
-    [SerializeField] private float slideVelocity = 5f;
-    [SerializeField] private float slideUpBias = 2.0f;
-    [SerializeField] private float hopUpBias = 5f;
-    [SerializeField] private float wallHopForce = 50f;
-    [SerializeField] private float movementPauseTime = 1f;
+    [Header("General Parameters")]
     [SerializeField] public string characterName = "Player";
+    [SerializeField] private float movementPauseTime = 1f;
+    
+    [Header("Sliding Parameters")]
+    [SerializeField] private float slideVelocity = 5f;
+    
+    [Header("Wall Hopping Parameters")]
+    [SerializeField] private float wallHopForce = 50f;
+    [SerializeField, Tooltip("Upwards bias for wall hopping")] 
+    private float hopUpBias = 5f;
+    
+    [Header("Jumping Parameters")]
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] private float jumpApexSpeed = 0.1f;
+    [SerializeField] private float jumpApexGravity = 0.5f;
 
+    [SerializeField, Tooltip("How many times slower the player falls after reaching the apex")]
+    private float fallSpeed = 0.5f;
+    
+    
     // components and tracker variables
     Collider collider;
     private Rigidbody rb;
+    private ConstantForce cf;
     private Animator animator;
     
     // State tracking
@@ -65,6 +79,7 @@ public class PlayerController : MonoBehaviour
         Instance = this;
 
         rb = GetComponent<Rigidbody>();
+        cf = GetComponent<ConstantForce>();
         animator = transform.GetChild(1).GetComponent<Animator>();
         collider = GetComponent<Collider>();
         currentMovement = walking;
@@ -133,7 +148,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.AddForce(transform.up * jumpForce);
+            StartCoroutine(Jump());
             return;
         }
         
@@ -143,6 +158,35 @@ public class PlayerController : MonoBehaviour
             return;
         }
     }
+
+
+    IEnumerator Jump()
+    {
+        float gravity = cf.force.y;
+        rb.AddForce(transform.up * jumpForce);
+        Debug.Log("Jump start");
+    
+        // Avoid triggering is grounded as soon as the jump starts
+        yield return new WaitUntil(() => !IsGrounded());
+
+        while (!IsGrounded())
+        {
+            yield return new WaitForFixedUpdate();
+
+            // slowdown at the designated apex
+            if (rb.linearVelocity.y > -jumpApexSpeed && rb.linearVelocity.y < jumpApexSpeed)
+            {
+                cf.force = new Vector3(0, jumpApexGravity, 0);
+                continue;
+            }
+            
+            cf.force = new Vector3(0, rb.linearVelocity.y > 0 ? gravity : gravity * fallSpeed, 0);
+            
+        }
+
+        cf.force = new Vector3(0, gravity, 0);
+    }
+    
     
     void OnCrouch(InputValue value)
     {
@@ -245,7 +289,8 @@ public class PlayerController : MonoBehaviour
         // hop off a wall
         if (cachedWallNormal.x != 0 || cachedWallNormal.z != 0)
         {
-            rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.VelocityChange);
+            rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.Acceleration);
+            currentInput = Vector3.zero;
         }
         
         // pause the movement for a bit to let hop occur
