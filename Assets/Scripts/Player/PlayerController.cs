@@ -292,8 +292,11 @@ public class PlayerController : MonoBehaviour
             currentInput = Vector3.zero;
             moving = false;
             yield return new WaitForSeconds(0.05f);
-            rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.Acceleration);
-  
+            rb.AddForce(wallHopForce * (cachedWallNormal), ForceMode.Acceleration);
+
+            yield return new WaitForSeconds(0.05f);
+            rb.AddForce(new Vector3(0, wallHopForce * hopUpBias, 0), ForceMode.Acceleration);
+
         }
         
         // pause the movement for a bit to let hop occur

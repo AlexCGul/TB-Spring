@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: hopUpBias
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: jumpForce
