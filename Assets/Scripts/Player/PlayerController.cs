@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     
     
     // components and tracker variables
-    Collider collider;
+    BoxCollider collider;
     private Rigidbody rb;
     private ConstantForce cf;
     private Animator animator;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         cf = GetComponent<ConstantForce>();
         animator = transform.GetChild(1).GetComponent<Animator>();
-        collider = GetComponent<Collider>();
+        collider = GetComponent<BoxCollider>();
         currentMovement = walking;
     }
     
@@ -102,17 +102,18 @@ public class PlayerController : MonoBehaviour
         
         animator.SetFloat("VerticalInput", currentInput.z);
         animator.SetFloat("HorizontalInput", currentInput.x);
+        
         if (!moving)
         {
             moving = true;
-            StartCoroutine(Move());
             currentInput.Normalize();
+            StartCoroutine(Move());
         }
         
+        // allow the input to stop
         if (currentInput.magnitude < 0.1f)
         {
             moving = false;
-            //rb.velocity = Vector3.zero;
         }
 
     }
@@ -154,7 +155,7 @@ public class PlayerController : MonoBehaviour
         
         if (sliding)
         {
-            WallHop();
+            StartCoroutine(WallHop());
             return;
         }
     }
@@ -194,18 +195,17 @@ public class PlayerController : MonoBehaviour
         if (value.isPressed)
         {
             float oldHeight;
-            BoxCollider boxCollider = collider as BoxCollider;
             
-            if (!boxCollider || currentMovement == crouching)
+            if (!collider || currentMovement == crouching)
             {
                 Debug.LogError("Collider is not a BoxCollider");
                 return;
             }
             
             currentMovement = crouching;
-            oldHeight = boxCollider.size.y;
-            boxCollider.size = new Vector3(boxCollider.size.x, boxCollider.size.y * 0.5f, boxCollider.size.z);
-            boxCollider.center = new Vector3(boxCollider.center.x,boxCollider.center.y - (oldHeight * 0.25f), boxCollider.center.z);
+            oldHeight = collider.size.y;
+            collider.size = new Vector3(collider.size.x, collider.size.y * 0.5f, collider.size.z);
+            collider.center = new Vector3(collider.center.x,collider.center.y - (oldHeight * 0.25f), collider.center.z);
         
             
             return;
@@ -284,13 +284,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void WallHop()
+    IEnumerator WallHop()
     {
         // hop off a wall
         if (cachedWallNormal.x != 0 || cachedWallNormal.z != 0)
         {
-            rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.Acceleration);
             currentInput = Vector3.zero;
+            moving = false;
+            yield return new WaitForSeconds(0.05f);
+            rb.AddForce(wallHopForce * (cachedWallNormal + (Vector3.up * hopUpBias)), ForceMode.Acceleration);
+  
         }
         
         // pause the movement for a bit to let hop occur
