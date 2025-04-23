@@ -11,6 +11,8 @@ public class Pickup : MonoBehaviour, IInteractable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Inventory inventory = PlayerController.Instance.GetComponent<Inventory>();
+        onPickup.AddListener(inventory.PickupItem);
         rb = GetComponent<Rigidbody>();
     }
 

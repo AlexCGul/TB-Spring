@@ -165,7 +165,6 @@ public class PlayerController : MonoBehaviour
     {
         float gravity = cf.force.y;
         rb.AddForce(transform.up * jumpForce);
-        Debug.Log("Jump start");
     
         // Avoid triggering is grounded as soon as the jump starts
         yield return new WaitUntil(() => !IsGrounded());

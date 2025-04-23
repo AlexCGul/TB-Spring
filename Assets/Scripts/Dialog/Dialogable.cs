@@ -39,6 +39,12 @@ public class Dialogable : MonoBehaviour, IInteractable
                 break;
         }
 
+        if (questDialog.Length < 1)
+        {
+            dialogIndex = 0;
+            Debug.LogWarning("Only one dialog on " + gameObject.name);
+        }
+
         DialogUI.instance.StartInteraction(gameObject, questDialog[dialogIndex]);
         dialogIndex += dialogIndex < 2 ? 1 : 0;
     }

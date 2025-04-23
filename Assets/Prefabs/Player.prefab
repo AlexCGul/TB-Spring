@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6505971446042502330}
   - component: {fileID: 3618217040162103647}
   - component: {fileID: 8891752165305005928}
+  - component: {fileID: 7120095066923493855}
   - component: {fileID: 8052507841203126352}
   - component: {fileID: 5717763101701171482}
   - component: {fileID: 8840091817725709621}
@@ -70,7 +71,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.01
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -82,11 +83,23 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!75 &7120095066923493855
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352969703920581787}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -10, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &8052507841203126352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,23 +143,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walking:
+    acceleration: 25
+    maxSpeed: 3.5
+  inAir:
     acceleration: 1500
-    maxSpeed: 3
+    maxSpeed: 4
   running:
-    acceleration: 2000
-    maxSpeed: 6
+    acceleration: 25
+    maxSpeed: 7
   crouching:
-    acceleration: 1500
-    maxSpeed: 1.5
+    acceleration: 15
+    maxSpeed: 0.1
   currentMovement:
     acceleration: 10
     maxSpeed: 25
-  jumpForce: 250
-  slideVelocity: 1
-  slideUpBias: 2
-  movementPauseTime: 1
   characterName: Player
+  movementPauseTime: 1
+  slideVelocity: 0.5
+  wallHopForce: 250
+  hopUpBias: 1.25
+  jumpForce: 300
+  jumpApexSpeed: 1.5
+  jumpApexGravity: -5
+  fallSpeed: 0.5
   currentInput: {x: 0, y: 0, z: 0}
+  sliding: 0
 --- !u!114 &8840091817725709621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac47fda36bd3244d8832b3cfedd9aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectives: []
+  objective: {fileID: 11400000, guid: d37a340f067124b4589c4548c9c35384, type: 2}
 --- !u!114 &7561655023315533485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heldItem: {fileID: 0}
-  heldItemContainer: {fileID: 0}
+  heldItemContainer: {fileID: 901757161169776571}
   heldItemOffset: {x: 0.43, y: 0.31, z: -0.38}
 --- !u!1 &4180637283703864101
 GameObject:
@@ -354,6 +375,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -3535015912173895022, guid: 208f9f5edfdfde3428fa65ba54202778, type: 3}
+--- !u!1 &901757161169776571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2614644408646162067, guid: 208f9f5edfdfde3428fa65ba54202778, type: 3}
+  m_PrefabInstance: {fileID: 6284005404965816022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3608731479917030585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7287263684305758831, guid: 208f9f5edfdfde3428fa65ba54202778, type: 3}
