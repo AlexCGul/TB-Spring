@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 currentInput;
     private bool moving = false;
     private bool noMove = false;
-    private bool sliding = false;
+    [SerializeField] private bool sliding = false;
     private Vector3 cachedWallNormal = Vector3.zero;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -271,7 +271,7 @@ public class PlayerController : MonoBehaviour
         }
         
         cachedWallNormal = other.GetContact(0).normal;
-        if (moving)
+        if (!IsGrounded())
         {
             StartCoroutine(WallSlide());
         }
