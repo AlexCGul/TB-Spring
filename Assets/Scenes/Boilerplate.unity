@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3618217040162103647, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4771446445458037251, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_Enabled
@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: wallHopForce
-      value: 500
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: jumpApexSpeed
@@ -467,15 +467,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: walking.maxSpeed
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: crouching.maxSpeed
-      value: 2.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: inAir.acceleration
       value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: running.acceleration
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: walking.acceleration
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: crouching.acceleration
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,11 +543,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8891752165305005928, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_Drag
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8891752165305005928, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891752165305005928, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -544,9 +560,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2352969703920581787, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1591317129}
-    - targetCorrespondingSourceObject: {fileID: 2352969703920581787, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1591317136}
   m_SourcePrefab: {fileID: 100100000, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
 --- !u!1 &1591317122 stripped
 GameObject:
@@ -565,29 +578,6 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
---- !u!136 &1591317136
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591317122}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.1904964
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.17686428, z: 0}
 --- !u!1 &1723686734
 GameObject:
   m_ObjectHideFlags: 0
