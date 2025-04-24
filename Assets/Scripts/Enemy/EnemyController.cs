@@ -155,8 +155,15 @@ public class EnemyController : MonoBehaviour
 
     Vector3 GetNextPatrolPoint()
     {
+        if (patrolPoints.Length == 0)
+        {
+            #if UNITY_EDITOR
+            Debug.LogWarning("No patrol points assigned to " + gameObject.name);
+            #endif
+            
+            return transform.position;
+        }
         currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
-        Debug.Log(patrolPoints[currentPatrolPoint].transform.position + " Current patrol point set to " + currentPatrolPoint);
         return patrolPoints[currentPatrolPoint].transform.position;
     }    
 }
