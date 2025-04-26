@@ -417,6 +417,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6537738899885001744, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537738899885001744, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -599,6 +603,10 @@ PrefabInstance:
     - target: {fileID: 6537738899885001744, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537738899885001744, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8145715318234788239, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
