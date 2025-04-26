@@ -3,6 +3,7 @@ Shader "Unlit/Wall"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _Color ("Color", Color) = (1,1,1,1)
     }
     SubShader
     {
@@ -39,6 +40,7 @@ Shader "Unlit/Wall"
             };
 
             sampler2D _MainTex;
+            float4 _Color;
             float4 _MainTex_ST;
 
             v2f vert (appdata v)
@@ -56,7 +58,7 @@ Shader "Unlit/Wall"
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
+                return col * _Color;
             }
             ENDCG
         }

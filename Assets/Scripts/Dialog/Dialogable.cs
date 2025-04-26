@@ -9,6 +9,8 @@ public class Dialogable : MonoBehaviour, IInteractable
     [SerializeField] int dialogIndex = 0;
     [SerializeField] private bool questComplete = false;
     DialogNode currentNode;
+
+    [SerializeField] private float talkDistance = 5f;
     
     [SerializeField] UnityEvent onSatisfied;
     
@@ -20,7 +22,7 @@ public class Dialogable : MonoBehaviour, IInteractable
 
 
     void StartDialog()
-    {
+    { 
         switch (dialogIndex)
         {
             case 1:
@@ -45,29 +47,55 @@ public class Dialogable : MonoBehaviour, IInteractable
             Debug.LogWarning("Only one dialog on " + gameObject.name);
         }
 
+        GoToTalkPoint();
         DialogUI.instance.StartInteraction(gameObject, questDialog[dialogIndex]);
         dialogIndex += dialogIndex < 2 ? 1 : 0;
     }
 
+
+    void GoToTalkPoint()
+    {
+        Vector3 dPos = transform.position;
+        Vector3 pPos = PlayerController.Instance.transform.position;
+        Vector3 dir = (pPos - dPos).normalized;
+        Vector3 xDest = new Vector3(dPos.x + (dir.x * talkDistance), dPos.y, dPos.z);
+        Vector3 yDest = new Vector3(dPos.x, dPos.y, dPos.z + (dir.z * talkDistance));
+
+        if (Mathf.Abs(dir.x) > 0.25f && Vector3.Distance(pPos, xDest) < Vector3.Distance(pPos, yDest))
+        {
+            PlayerController.Instance.GoToDest(xDest);
+            return;
+        }
+
+        PlayerController.Instance.GoToDest(yDest);
+        
+        
+    }
+
+    
     public void Interact()
     {
         StartDialog();
     }
 
+    
     public bool IsInteractable(GameObject interactingCharacter)
     {
         return true;
     }
 
+    
     public string GetInteractionType()
     {
         return "Talk";
     }
 
+    
     public GameObject GetOwner()
     {
         return gameObject;
     }
+    
 
     public float GetInteractionDistanceMultiplier()
     {

@@ -4,6 +4,7 @@ using System.Numerics;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -83,6 +84,13 @@ public class PlayerController : MonoBehaviour
         animator = transform.GetChild(1).GetComponent<Animator>();
         collider = GetComponent<BoxCollider>();
         currentMovement = walking;
+    }
+
+
+    public void GoToDest(Vector3 dest)
+    {
+        // move to the destination
+        rb.MovePosition(dest);
     }
     
 
