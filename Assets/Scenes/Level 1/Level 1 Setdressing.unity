@@ -172,6 +172,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9119243527511705245, guid: 04f7b2c7c615b464a952af9a2b5d8f6a, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 2800000, guid: 4457a6393a4a34a479b6cc8ee971cea5, type: 3}
+    - target: {fileID: 9119243527511705245, guid: 04f7b2c7c615b464a952af9a2b5d8f6a, type: 3}
       propertyPath: onPickup.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

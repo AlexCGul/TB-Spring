@@ -28,7 +28,7 @@ public class Dialogable : MonoBehaviour, IInteractable
             case 1:
                 if (oc.AttemptCompleteDeliveryTask())
                 {
-                    dialogIndex = 1;
+                    dialogIndex = 2;
                     questComplete = true;
                     onSatisfied?.Invoke();
                 }

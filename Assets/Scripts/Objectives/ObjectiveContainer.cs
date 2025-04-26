@@ -26,7 +26,10 @@ public class ObjectiveContainer : MonoBehaviour
     
     public bool AttemptCompleteDeliveryTask()
     {
-        if (!inventory.GetHeld())
+        if (!inventory)
+            inventory = PlayerController.Instance.GetComponent<Inventory>();
+
+        if (!inventory || !inventory.GetHeld())
             return false;
         
         return objective.CompleteByName("Bring " + inventory.GetHeld().name);
