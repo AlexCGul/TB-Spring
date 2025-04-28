@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     
     
     // components and tracker variables
-    BoxCollider collider;
+    CapsuleCollider collider;
     private Rigidbody rb;
     private ConstantForce cf;
     private Animator animator;
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         cf = GetComponent<ConstantForce>();
         animator = transform.GetChild(1).GetComponent<Animator>();
-        collider = GetComponent<BoxCollider>();
+        collider = GetComponent<CapsuleCollider>();
         currentMovement = walking;
     }
 
@@ -210,9 +210,9 @@ public class PlayerController : MonoBehaviour
             }
             
             currentMovement = crouching;
-            oldHeight = collider.size.y;
-            collider.size = new Vector3(collider.size.x, collider.size.y * 0.5f, collider.size.z);
-            collider.center = new Vector3(collider.center.x,collider.center.y - (oldHeight * 0.25f), collider.center.z);
+            oldHeight = collider.height;
+            collider.height *= 0.5f;
+            collider.center = new Vector3(collider.center.x,collider.center.y - (oldHeight * 0.15f), collider.center.z);
         
             
             return;
@@ -225,10 +225,8 @@ public class PlayerController : MonoBehaviour
 
     void StopCrouch()
     {
-        BoxCollider boxCollider = collider as BoxCollider;
-
-        boxCollider.size = new Vector3(boxCollider.size.x, boxCollider.size.y * 2f, boxCollider.size.z);
-        boxCollider.center = new Vector3(boxCollider.center.x,boxCollider.center.y + (boxCollider.size.y * 0.25f), boxCollider.center.z);
+        collider.height *= 2f;
+        collider.center = new Vector3(collider.center.x,collider.center.y + (collider.height * 0.15f), collider.center.z);
         
         currentMovement = walking;
     }
@@ -236,7 +234,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Move()
     {
-        while (moving)
+        while (moving && !sliding)
         {
             if (noMove)
             {
@@ -317,6 +315,7 @@ public class PlayerController : MonoBehaviour
         // if the player is not on a wall, don't slide
         if (!(cachedWallNormal.x != 0 || cachedWallNormal.z != 0 || IsGrounded()))
             yield break;
+        rb.linearVelocity = Vector3.zero;
         
         sliding = true;
         while (sliding)

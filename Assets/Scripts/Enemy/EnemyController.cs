@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator DetectPlayer()
     {
         PlayerController player = PlayerController.Instance;
-        BoxCollider bc = player.GetComponent<BoxCollider>();
+        CapsuleCollider bc = player.GetComponent<CapsuleCollider>();
         
         while (gameObject)
         {
@@ -93,14 +93,14 @@ public class EnemyController : MonoBehaviour
             if (hit.collider && !hit.collider.CompareTag("Player"))
             {
                 rayTop = Physics.Raycast(transform.position,
-                    (player.transform.position + new Vector3(0, bc.size.y * 0.5f, 0)) - transform.position
+                    (player.transform.position + new Vector3(0, bc.height * 0.5f, 0)) - transform.position
                     , out hit, detectionRadius * 0.5f);
             }
 
             if (hit.collider && !hit.collider.CompareTag("Player"))
             {
                 rayBottom = Physics.Raycast(transform.position,
-                    (player.transform.position - new Vector3(0, bc.size.y * 0.4f, 0)) - transform.position
+                    (player.transform.position - new Vector3(0, bc.height * 0.4f, 0)) - transform.position
                     , out hit, detectionRadius * 0.5f);
             }
 
@@ -108,8 +108,8 @@ public class EnemyController : MonoBehaviour
             // Draw the detection lines for debugging
             #if UNITY_EDITOR
             Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red, 2f);
-            Debug.DrawRay(transform.position, (player.transform.position + new Vector3(0,bc.size.y * 0.5f,0)) - transform.position, Color.red, 2f);
-            Debug.DrawRay(transform.position, (player.transform.position - new Vector3(0,bc.size.y * 0.4f,0)) - transform.position, Color.red, 2f);
+            Debug.DrawRay(transform.position, (player.transform.position + new Vector3(0,bc.height * 0.5f,0)) - transform.position, Color.red, 2f);
+            Debug.DrawRay(transform.position, (player.transform.position - new Vector3(0,bc.height * 0.4f,0)) - transform.position, Color.red, 2f);
             #endif
             
             if (rayStraight || rayBottom || rayTop)

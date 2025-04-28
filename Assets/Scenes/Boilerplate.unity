@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 312390523}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0, z: 0, w: 0.9621538}
-  m_LocalPosition: {x: 4.71, y: 20.389746, z: -29.20805}
+  m_LocalPosition: {x: 31.3, y: 20.389746, z: -96.10805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -489,7 +489,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.4637973
@@ -1302,6 +1302,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: crouching.maxSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717763101701171482, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+      propertyPath: crouching.acceleration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5720008774493350983, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1380,7 +1388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.71
+      value: 31.3
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1388,7 +1396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -65.9
       objectReference: {fileID: 0}
     - target: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1670,7 +1678,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3618217040162103647, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6505971446042502330, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
@@ -2280,7 +2289,7 @@ Transform:
   m_GameObject: {fileID: 1723686734}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27250692, y: 0, z: 0, w: 0.9621538}
-  m_LocalPosition: {x: 4.71, y: 20.389746, z: -29.20805}
+  m_LocalPosition: {x: 31.3, y: 20.389746, z: -96.10805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
