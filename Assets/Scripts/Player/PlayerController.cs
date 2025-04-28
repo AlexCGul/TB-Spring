@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
         Vector3 size = collider.bounds.extents;
         RaycastHit hit;
         return Physics.Raycast(transform.position, Vector3.down, out hit, size.y + 0.1f);
-    }
+    }   
     
     
     void OnJump(InputValue value)

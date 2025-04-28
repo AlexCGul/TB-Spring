@@ -32,3 +32,15 @@
     -unity-text-align: upper-center;
     text-shadow: -1.5px -1.5px 0 rgb(0, 0, 0);
 }
+
+.GUIElement {
+    flex-grow: 1;
+    max-width: 25%;
+    max-height: 25%;
+    width: 5%;
+    height: 5%;
+    min-width: 250px;
+    min-height: 150px;
+    position: absolute;
+    background-color: rgb(125, 82, 96);
+}
