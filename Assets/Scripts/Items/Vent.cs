@@ -26,7 +26,9 @@ public class Vent : MonoBehaviour, IInteractable
             return;
         }
         
+        wasActivated = true;
         rb.isKinematic = false;
+        gameObject.layer = 8; // Set to unhittable
         rb.AddForce(transform.forward * popForce, ForceMode.Impulse);
     }
 
