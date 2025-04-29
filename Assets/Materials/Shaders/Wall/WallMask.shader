@@ -11,12 +11,13 @@ Shader "Unlit/WallMask"
         ZWrite Off
         LOD 100
         
+        /*
         Stencil
         {
             Ref 1
             Comp Always
             Pass Replace
-        }
+        }*/
 
         Pass
         {

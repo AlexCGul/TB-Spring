@@ -1,3 +1,5 @@
+using System;
+using FMODUnity;
 using UnityEngine;
 
 public class Vent : MonoBehaviour, IInteractable
@@ -5,6 +7,12 @@ public class Vent : MonoBehaviour, IInteractable
     [SerializeField, Tooltip("How much force to use when flying forward")] 
     private float popForce;
 
+    [SerializeField] private EventReference ventUse;
+
+    [SerializeField] private EventReference ventClang;
+
+    private FMODUnity.StudioEventEmitter ventEmitter;
+    
     private bool wasActivated = false;
 
     private Rigidbody rb;
@@ -13,8 +21,8 @@ public class Vent : MonoBehaviour, IInteractable
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        ventEmitter = GetComponent<FMODUnity.StudioEventEmitter>();
         rb.isKinematic = true;
-        
     }
 
     
@@ -30,6 +38,8 @@ public class Vent : MonoBehaviour, IInteractable
         rb.isKinematic = false;
         gameObject.layer = 8; // Set to unhittable
         rb.AddForce(transform.forward * popForce, ForceMode.Impulse);
+        FMODUnity.RuntimeManager.PlayOneShot(ventUse, transform.position);
+        ventEmitter.Stop();
     }
 
     public bool IsInteractable(GameObject interactingCharacter)
@@ -62,5 +72,12 @@ public class Vent : MonoBehaviour, IInteractable
     public float GetInteractionDistanceMultiplier()
     {
         return 1;
+    }
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(ventClang, transform.position);
+
     }
 }

@@ -1071,8 +1071,47 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f321bd6884f489543b3b225510edeceb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8967773658562838412}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f321bd6884f489543b3b225510edeceb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4299835500865164333}
   m_SourcePrefab: {fileID: 100100000, guid: f321bd6884f489543b3b225510edeceb, type: 3}
+--- !u!1 &3745871895645195498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f321bd6884f489543b3b225510edeceb, type: 3}
+  m_PrefabInstance: {fileID: 4556916549935444411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4299835500865164333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745871895645195498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1037066072
+      Data2: 1270149364
+      Data3: -594312536
+      Data4: -1734018792
+    Path: event:/Props/Light
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 20
 --- !u!4 &4086966119078647376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f321bd6884f489543b3b225510edeceb, type: 3}

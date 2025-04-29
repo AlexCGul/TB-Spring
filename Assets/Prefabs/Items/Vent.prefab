@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b88a9aed34a7e1479e25540bcf44389, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6585377166231512641}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b88a9aed34a7e1479e25540bcf44389, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 740944105214866559}
   m_SourcePrefab: {fileID: 100100000, guid: 9b88a9aed34a7e1479e25540bcf44389, type: 3}
 --- !u!1 &1771515579795489731 stripped
 GameObject:
@@ -86,6 +89,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popForce: 10
+  ventUse:
+    Guid:
+      Data1: 1455166123
+      Data2: 1104796705
+      Data3: -839237709
+      Data4: 1969597461
+    Path: event:/Props/VentPop
+  ventClang:
+    Guid:
+      Data1: -2033861450
+      Data2: 1176255932
+      Data3: 131888557
+      Data4: -422687217
+    Path: event:/Props/VentHit
 --- !u!65 &6749676346286349977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -134,3 +151,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &740944105214866559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771515579795489731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1742744098
+      Data2: 1093557829
+      Data3: -184168299
+      Data4: -1186042999
+    Path: event:/Props/VentAmbience
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 20
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
