@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objective: {fileID: 11400000, guid: d37a340f067124b4589c4548c9c35384, type: 2}
+  inventory: {fileID: 0}
 --- !u!114 &7561655023315533485
 MonoBehaviour:
   m_ObjectHideFlags: 0
