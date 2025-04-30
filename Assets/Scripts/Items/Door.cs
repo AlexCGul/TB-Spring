@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public bool isOpen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,5 +16,6 @@ public class Door : MonoBehaviour
         
         renderer.enabled = !renderer.enabled;
         collider.enabled = !collider.enabled;
+        isOpen = !isOpen;
     }
 }
