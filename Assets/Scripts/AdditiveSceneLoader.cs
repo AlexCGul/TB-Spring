@@ -1,11 +1,14 @@
 using System;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using UnityEngine;
+#endif
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class AdditiveSceneLoader : MonoBehaviour
 {
+    #if UNITY_EDITOR
     [SerializeField] private string[] sceneNames;
     private void OnValidate()
     {
@@ -64,4 +67,6 @@ public class AdditiveSceneLoader : MonoBehaviour
         
         return false;
     }
+    
+    #endif
 }

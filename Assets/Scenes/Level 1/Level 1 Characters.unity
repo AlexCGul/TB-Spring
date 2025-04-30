@@ -583,6 +583,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4883289088651967356, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883289088651967356, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: 'patrolPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1791087309}
+    - target: {fileID: 4883289088651967356, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: 'patrolPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2114942560}
     - target: {fileID: 6537738899885001744, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
       propertyPath: m_Name
       value: 'Enemy '
@@ -671,6 +683,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4883289088651967356, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883289088651967356, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: 'patrolPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 473117218}
+    - target: {fileID: 4883289088651967356, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
+      propertyPath: 'patrolPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 790655530}
     - target: {fileID: 6537738899885001744, guid: f3521b6d1cfdba049b7c3d6871523474, type: 3}
       propertyPath: m_Name
       value: 'Enemy '

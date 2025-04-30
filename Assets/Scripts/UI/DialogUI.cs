@@ -26,11 +26,14 @@ public class DialogUI : MonoBehaviour
         
         instance = this;
         dialogRoot = root.Q("Dialog");
-        dialogRoot.style.display = DisplayStyle.None;
-        
-        title = dialogRoot.Q<Label>("Name");
-        body = dialogRoot.Q<Label>("Body");
-        
+
+        if (dialogRoot != null)
+        {
+            dialogRoot.style.display = DisplayStyle.None;
+
+            title = dialogRoot.Q<Label>("Name");
+            body = dialogRoot.Q<Label>("Body");
+        }
     }
 
 
@@ -58,17 +61,25 @@ public class DialogUI : MonoBehaviour
         // setup textbox
         title.text = dialog.name;
         currentNode = dialog.GetStartNode();
-        dialogRoot.style.display = DisplayStyle.Flex;
         Camera cam = Camera.main;
+
+        if (dialogRoot == null)
+            return;
         
+        dialogRoot.style.display = DisplayStyle.Flex;
+
         // Set box position
         VisualElement dialogBox = dialogRoot.Q("DialogBox");
-        Vector3 screenPos = cam.WorldToScreenPoint(actor.transform.position);
-        dialogBox.style.left = new StyleLength(new Length(screenPos.x, LengthUnit.Pixel));
-        dialogBox.style.top = new StyleLength(new Length(cam.pixelHeight - screenPos.y, LengthUnit.Pixel));
-        TriggerNextNode();
 
-        
+        if (dialogBox != null)
+        {
+            Vector3 screenPos = cam.WorldToScreenPoint(actor.transform.position);
+            dialogBox.style.left = new StyleLength(new Length(screenPos.x, LengthUnit.Pixel));
+            dialogBox.style.top = new StyleLength(new Length(cam.pixelHeight - screenPos.y, LengthUnit.Pixel));
+            TriggerNextNode();
+        }
+
+
         dialog.DialogFinished();
     }
 

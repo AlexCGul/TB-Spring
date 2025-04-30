@@ -70,10 +70,14 @@ public class InteractionManager : MonoBehaviour
                         #endif
                         
                         InteractWidget widget = new InteractWidget();
-                        widgets.Add(widget);
-                        interactionWidgetsRoot.Add(widget);
-                        widget.target = interactable.GetOwner().transform;
-                        interactables[interactable] = true;
+
+                        if (interactionWidgetsRoot != null)
+                        {
+                            widgets.Add(widget);
+                            interactionWidgetsRoot.Add(widget);
+                            widget.target = interactable.GetOwner().transform;
+                            interactables[interactable] = true;
+                        }
                     }
 
                     // check if interact event in new input system is active

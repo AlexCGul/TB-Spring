@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Build;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Objective", menuName = "Objectives/New Objective")]

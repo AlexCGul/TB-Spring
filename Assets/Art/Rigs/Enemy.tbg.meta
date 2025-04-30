@@ -12,7 +12,7 @@ ScriptedImporter:
   DiscretizationStep: 6
   Framerate: 30
   Stepped: 1
-  AnimatorController: {instanceID: 0}
+  AnimatorController: {fileID: 9100000, guid: eb2dcda3198156347995378793cf3eee, type: 2}
   MaintainCurvesOnClonedClips: 0
   Shader: {fileID: 4800000, guid: 5d58be77f4b388945991a670eb30940e, type: 3}
   Material: {instanceID: 0}
