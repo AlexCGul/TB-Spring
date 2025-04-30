@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class AdditiveSceneLoader : MonoBehaviour
 {
-    #if UNITY_EDITOR
     [SerializeField] private string[] sceneNames;
+    #if UNITY_EDITOR
     private void OnValidate()
     {
         int newSceneCount = 0;
@@ -38,6 +38,7 @@ public class AdditiveSceneLoader : MonoBehaviour
         
         Debug.Log(newSceneCount + " new scenes loaded");
     }
+#endif
 
 
     private void Start()
@@ -67,6 +68,4 @@ public class AdditiveSceneLoader : MonoBehaviour
         
         return false;
     }
-    
-    #endif
 }

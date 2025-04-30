@@ -169,7 +169,7 @@ namespace ToonBoom.TBGWorkflowGame
         {
             if (currentState.target == null)
                 return;
-            currentState.target.velocity = new Vector2(currentState.facing, 1) * interaction.kickForce;
+            currentState.target.linearVelocity = new Vector2(currentState.facing, 1) * interaction.kickForce;
             currentState.target = null;
         }
 
