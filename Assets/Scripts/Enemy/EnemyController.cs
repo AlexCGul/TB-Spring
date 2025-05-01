@@ -207,5 +207,19 @@ public class EnemyController : MonoBehaviour
         }
         currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
         return patrolPoints[currentPatrolPoint].transform.position;
-    }    
+    }
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        // reload scene
+        if (other.gameObject.CompareTag("Player"))
+        {
+            #if UNITY_EDITOR
+            Debug.Log("ded");
+            #endif
+            
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
+    }
 }

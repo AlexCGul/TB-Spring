@@ -103,13 +103,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private Vector3 cachedAnimState;
     void OnMove(InputValue value)
     {
         currentInput = value.Get<Vector2>();
         currentInput = new Vector3(currentInput.x, 0, currentInput.y);
         
-        animator.SetFloat("VerticalInput", currentInput.z);
-        animator.SetFloat("HorizontalInput", currentInput.x);
+        if (cachedAnimState != currentInput)
+        {
+            cachedAnimState = currentInput;
+            animator.SetFloat("VerticalInput", currentInput.z);
+            animator.SetFloat("HorizontalInput", currentInput.x);
+
+        }
         
         if (!moving)
         {
@@ -264,6 +270,10 @@ public class PlayerController : MonoBehaviour
             
             yield return new WaitForFixedUpdate();
         }
+        
+        animator.SetFloat("VerticalInput", 0);
+        animator.SetFloat("HorizontalInput", 0);
+
     }
     
     

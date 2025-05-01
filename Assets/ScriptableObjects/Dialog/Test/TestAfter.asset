@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: TestAfter
   m_EditorClassIdentifier: 
   startNode:
-    dialog: Thankyou!
-    nextNodes: []
-  speakerName: TestCharacter
+    dialog: ... Thankyou.... I've unlocked the door for you
+  speakerName: Phil
   onDialogStart:
     m_PersistentCalls:
       m_Calls: []

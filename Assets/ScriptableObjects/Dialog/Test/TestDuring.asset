@@ -13,11 +13,8 @@ MonoBehaviour:
   m_Name: TestDuring
   m_EditorClassIdentifier: 
   startNode:
-    dialog: Hello
-    nextNodes:
-    - dialog: Are you gonna get my test?
-      nextNodes: []
-  speakerName: TestCharacter
+    dialog: .... Would you be willing to get me a cube?
+  speakerName: Phil
   onDialogStart:
     m_PersistentCalls:
       m_Calls: []
