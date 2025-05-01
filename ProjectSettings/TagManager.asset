@@ -13,9 +13,9 @@ TagManager:
   - UI
   - ViewableThroughWall
   - ViewableThroughWall2
-  - 
-  - 
-  - 
+  - Unhittable
+  - Wall
+  - WallMask
   - 
   - 
   - 

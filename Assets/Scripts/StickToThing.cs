@@ -1,14 +1,22 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class StickToThing : MonoBehaviour
 {
-    [SerializeField] private GameObject target;
-    [SerializeField] Vector3 offset = Vector3.zero;
+    [SerializeField] public GameObject target;
+    [SerializeField] public Vector3 offset = Vector3.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartCoroutine(Setup());
+    }
+
+    IEnumerator Setup()
+    {
+        yield return new WaitForSeconds(0.25f);
+        if (!target)
+            Destroy(gameObject);
     }
 
     private void OnValidate()
@@ -20,6 +28,7 @@ public class StickToThing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = target.transform.position + offset;
+        if (target)
+            transform.position = target.transform.position + offset;
     }
 }

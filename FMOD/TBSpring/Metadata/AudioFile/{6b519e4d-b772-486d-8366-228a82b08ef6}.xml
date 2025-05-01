@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6b519e4d-b772-486d-8366-228a82b08ef6}">
+		<property name="assetPath">
+			<value>Enemy/SlimeIdle.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.3436734693877552</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b91de53f-da6d-41c5-8e5a-6972eb8fc330}</destination>
+		</relationship>
+	</object>
+</objects>

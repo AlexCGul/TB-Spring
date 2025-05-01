@@ -3,14 +3,24 @@ using System.Collections;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
+using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class EnemyController : MonoBehaviour
 {
+    
+    
     // Adjustable parameters
     [SerializeField] private GameObject[] patrolPoints;
     [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private float lostVisualTimer = 2f;
+
+    [SerializeField] private GameObject sprite;
+    private GameObject spriteInstance;
+    Animator animator;
+    
+    [SerializeField] Vector3 offset = new Vector3(0, 0.5f, 0);
+    [SerializeField] Vector3 rotation = new Vector3(0, 180, 0);
     
     int currentPatrolPoint = 0;
     
@@ -18,16 +28,48 @@ public class EnemyController : MonoBehaviour
 
     private bool playerDetected = false;
     private bool lostVisual = false;
+
+    private void OnValidate()
+    {
+        if (!spriteInstance)
+        {
+            spriteInstance = Instantiate(sprite, transform.position, Quaternion.identity);
+        }
+        
+        spriteInstance.transform.position = transform.position + offset;
+        spriteInstance.transform.rotation = Quaternion.Euler(rotation);
+        spriteInstance.GetComponent<StickToThing>().offset = offset;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (!spriteInstance)
+        {
+            spriteInstance = Instantiate(sprite, transform.position, Quaternion.identity);
+        }
+        
+        spriteInstance.transform.position = transform.position + offset;
+        spriteInstance.transform.rotation = Quaternion.Euler(rotation);
+        spriteInstance.GetComponent<StickToThing>().target = gameObject;
+        spriteInstance.GetComponent<StickToThing>().offset = offset;
+
+        animator = spriteInstance.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        
         Vector3 dest = GetNextPatrolPoint();
         agent.SetDestination(dest);
         agent.isStopped = false;
 
         StartCoroutine(DetectPlayer());
         StartCoroutine(Patrol());
+    }
+
+
+    private void Update()
+    {
+        animator.SetFloat("XVel", agent.velocity.x);
+        animator.SetFloat("YVel", agent.velocity.z);
     }
 
 

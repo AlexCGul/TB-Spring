@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0d9501ab-3160-4c2b-aa03-79aaada6ddf9}">
+		<property name="assetPath">
+			<value>Props/DoorTerminal/button-click-289742.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.18285714285714286</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b91de53f-da6d-41c5-8e5a-6972eb8fc330}</destination>
+		</relationship>
+	</object>
+</objects>

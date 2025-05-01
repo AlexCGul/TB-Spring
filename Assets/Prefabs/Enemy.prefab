@@ -53,7 +53,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6537738899885001744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -178,6 +178,9 @@ MonoBehaviour:
   - {fileID: 0}
   detectionRadius: 10
   lostVisualTimer: 2
+  sprite: {fileID: 943925303691486076, guid: 65fa09ac157a4ca449c2058f0ab1c89a, type: 3}
+  offset: {x: 0.96, y: 0.44, z: 0.76}
+  rotation: {x: 423.761, y: 0, z: 0}
 --- !u!114 &2098142392411683780
 MonoBehaviour:
   m_ObjectHideFlags: 0
