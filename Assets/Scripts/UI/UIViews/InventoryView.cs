@@ -8,7 +8,7 @@ public partial class InventoryView : VisualElement
     const string styleSheet = "GUIElement";
     private const string BGElement = "GUIElement";
 
-    #if UNITY_EDITOR
+    //#if UNITY_EDITOR
     Texture2D testSprite;
     [UxmlAttribute, Tooltip("NOTE: Values added here will *not* carry to the build")]
     Texture2D TestSprite
@@ -21,7 +21,7 @@ public partial class InventoryView : VisualElement
         get => testSprite;
     }
     
-    #endif
+    //#endif
     public InventoryView()
     {
         styleSheets.Add(Resources.Load<StyleSheet>(styleSheet));

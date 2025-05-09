@@ -13,9 +13,10 @@ public partial class ObjectiveView : VisualElement
     private const string BGElement = "GUIElement";
     private const string titleText = "GUI_TextBase";
     private const string SubText = "GUI_SubText";
+    const string objectiveText = "ObjectiveText";
     
     // Use this for testing purposes only
-    #if UNITY_EDITOR
+    //#if UNITY_EDITOR
     private string[] tasks;
     
     [UxmlAttribute, Tooltip("NOTE: Values added here will *not* carry to the build")]
@@ -33,7 +34,7 @@ public partial class ObjectiveView : VisualElement
         } 
         get => tasks;
     }
-#endif
+//#endif
     
     // Parameters
     [UxmlAttribute] public string objectiveName = "Grab Coffee";
@@ -113,6 +114,7 @@ public partial class ObjectiveView : VisualElement
     {
         Label taskLabel = new Label(task.taskName);
         taskLabel.AddToClassList(SubText);
+        taskLabel.AddToClassList(objectiveText);
         taskContainer.Add(taskLabel);
         Color currentColor = taskLabel.resolvedStyle.color;
         task.OnTaskCompleted += () =>
