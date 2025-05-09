@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f522dfc2ec7a64dbe3b4e5888dd741, type: 3}
   m_Name: TestAfter
   m_EditorClassIdentifier: 
-  startNode:
-    dialog: ... Thankyou.... I've unlocked the door for you
+  nodes:
+  - dialog: Thankyou
+    nextNodes: []
+  - dialog: I appreciate the cure to my problems!
+    nextNodes: []
   speakerName: Phil
   onDialogStart:
     m_PersistentCalls:

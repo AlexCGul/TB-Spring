@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f522dfc2ec7a64dbe3b4e5888dd741, type: 3}
   m_Name: TestDuring
   m_EditorClassIdentifier: 
-  startNode:
-    dialog: .... Would you be willing to get me a cube?
+  nodes:
+  - dialog: ....Hi again
+    nextNodes: []
+  - dialog: Do you got my medicine?
+    nextNodes: []
   speakerName: Phil
   onDialogStart:
     m_PersistentCalls:

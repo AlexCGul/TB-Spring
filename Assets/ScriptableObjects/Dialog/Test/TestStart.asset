@@ -12,8 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f522dfc2ec7a64dbe3b4e5888dd741, type: 3}
   m_Name: TestStart
   m_EditorClassIdentifier: 
-  startNode:
-    dialog: .........Hi
+  nodes:
+  - dialog: ..............hi
+    nextNodes: []
+  - dialog: .......... my research is pointless
+    nextNodes: []
+  - dialog: Now that I'm here I can't save her
+    nextNodes: []
+  - dialog: You want me to unlock that door....?
+    nextNodes: []
+  - dialog: ...... I suppose I could
+    nextNodes: []
+  - dialog: Though............
+    nextNodes: []
+  - dialog: I'd appreciate you getting me some medication
+    nextNodes: []
   speakerName: Phil
   onDialogStart:
     m_PersistentCalls:
