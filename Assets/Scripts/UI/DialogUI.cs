@@ -33,6 +33,7 @@ public class DialogUI : MonoBehaviour
 
             title = dialogRoot.Q<Label>("Name");
             body = dialogRoot.Q<Label>("Body");
+            
         }
     }
 
@@ -49,7 +50,7 @@ public class DialogUI : MonoBehaviour
         input.SwitchCurrentActionMap("UI");
         InputActionMap uiMap = input.actions.FindActionMap("UI");
 
-        uiMap.FindAction("Click").performed += ctx =>
+        uiMap.FindAction("Submit").performed += ctx =>
         {
             InputNext();
         };

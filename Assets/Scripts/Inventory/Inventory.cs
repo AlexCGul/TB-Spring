@@ -54,8 +54,8 @@ public class Inventory : MonoBehaviour
         }
         
         heldItem = pickup;
-        heldItem.transform.parent = heldItemContainer.transform;
-        heldItem.transform.localPosition = Vector3.zero;
+        heldItem.transform.parent = transform;
+        heldItem.transform.localPosition = heldItemOffset;
         
         if (heldItem.rb)
             heldItem.rb.isKinematic = true;

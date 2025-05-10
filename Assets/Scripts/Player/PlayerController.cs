@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     [Header("General Parameters")]
     [SerializeField] public string characterName = "Player";
     [SerializeField] private float movementPauseTime = 1f;
+    [SerializeField] float groundDist = 0.5f;
     
     [Header("Sliding Parameters")]
     [SerializeField] private float slideVelocity = 5f;
@@ -155,7 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 size = collider.bounds.extents;
         RaycastHit hit;
-        return Physics.Raycast(transform.position, Vector3.down, out hit, size.y + 0.1f);
+        return Physics.Raycast(transform.position, Vector3.down, out hit, size.y + groundDist);
     }   
     
     
@@ -200,12 +201,12 @@ public class PlayerController : MonoBehaviour
 
         cf.force = new Vector3(0, gravity, 0);
     }
-    
-    
+
+
     void OnCrouch(InputValue value)
     {
         
-        if (value.isPressed)
+        if (value.isPressed && !currentMovement.Equals(crouching))
         {
             float oldHeight;
             
@@ -223,9 +224,13 @@ public class PlayerController : MonoBehaviour
             
             return;
         }
-        
-        StopCrouch();
-        
+
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, Vector3.up, groundDist))
+        {
+            StopCrouch();
+        }
+
     }
 
 
@@ -328,7 +333,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         
         sliding = true;
-        while (sliding)
+        while (sliding && !IsGrounded())
         {
             // Check if player wants to leave slide
             bool x = Mathf.Abs(currentInput.x) > 0 && Mathf.Approximately(currentInput.x, cachedWallNormal.x);
