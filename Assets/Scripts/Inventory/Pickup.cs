@@ -34,6 +34,8 @@ public class Pickup : MonoBehaviour, IInteractable
 
     public GameObject GetOwner()
     {
+        if (!this)
+            return null;
         return gameObject;
     }
 

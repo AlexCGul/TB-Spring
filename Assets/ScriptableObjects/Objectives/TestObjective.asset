@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Get Test
   tasks:
-  - taskName: Pickup Test
-  - taskName: Bring Test back to character
+  - taskName: Pickup Jack
+  - taskName: Bring Jack back to Phil

@@ -32,7 +32,15 @@ public class ObjectiveContainer : MonoBehaviour
         if (!inventory || !inventory.GetHeld())
             return false;
         
-        return objective.CompleteByName("Bring " + inventory.GetHeld().name);
+        bool completed = objective.CompleteByName("Bring " + inventory.GetHeld().name);
+        
+        // If pickup objective is completed then delete it
+        if (completed)
+        {
+            inventory.DeleteItem();
+        }
+        
+        return completed;
     }
     
     
@@ -61,5 +69,4 @@ public class ObjectiveContainer : MonoBehaviour
         Debug.Log($"Objective {objective.objectiveName} added to the container.");
         #endif
     }
-    
 }

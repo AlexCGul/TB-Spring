@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawCube(transform.position + heldItemOffset, Vector3.one * 0.5f);
     }
+    
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    
     public void PickupItem(Pickup pickup)
     {
         
@@ -67,6 +69,7 @@ public class Inventory : MonoBehaviour
         return heldItem;
     }
 
+    
     public void DropItem()
     {
         if (heldItem == null) 
@@ -75,6 +78,13 @@ public class Inventory : MonoBehaviour
             heldItem.rb.isKinematic = true;
         
         heldItem.transform.SetParent(null);
+        heldItem = null;
+    }
+
+
+    public void DeleteItem()
+    {
+        Destroy(heldItem.gameObject);
         heldItem = null;
     }
 }

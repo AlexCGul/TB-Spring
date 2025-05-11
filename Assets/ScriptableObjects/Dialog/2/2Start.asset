@@ -1,0 +1,364 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f522dfc2ec7a64dbe3b4e5888dd741, type: 3}
+  m_Name: 2Start
+  m_EditorClassIdentifier: 
+  nodes:
+  - dialog: Hello!
+    nextNodes:
+    - dialog: Me? What am I doing?
+      nextNodes:
+      - dialog: I only joined for the money
+        nextNodes:
+        - dialog: I wanted to leave after I got enough cash but that damned contract!
+          nextNodes:
+          - dialog: Now, now I can finally rest
+            nextNodes:
+            - dialog: Though............
+              nextNodes:
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+    - dialog: Me? What am I doing?
+      nextNodes:
+      - dialog: I only joined for the money
+        nextNodes:
+        - dialog: I wanted to leave after I got enough cash but that damned contract!
+          nextNodes:
+          - dialog: Now, now I can finally rest
+            nextNodes:
+            - dialog: Though............
+              nextNodes:
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+      - dialog: I only joined for the money
+        nextNodes:
+        - dialog: I wanted to leave after I got enough cash but that damned contract!
+          nextNodes:
+          - dialog: Now, now I can finally rest
+            nextNodes:
+            - dialog: Though............
+              nextNodes:
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+        - dialog: I wanted to leave after I got enough cash but that damned contract!
+          nextNodes:
+          - dialog: Now, now I can finally rest
+            nextNodes:
+            - dialog: Though............
+              nextNodes:
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+          - dialog: Now, now I can finally rest
+            nextNodes:
+            - dialog: Though............
+              nextNodes:
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+            - dialog: Though............
+              nextNodes:
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+              - dialog: I have neither coffee nor games T-T
+                nextNodes:
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+                - dialog: You want me to open the door?
+                  nextNodes:
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+                  - dialog: If you get me some coffee and games then sure!
+                    nextNodes: []
+  - dialog: Me? What am I doing?
+    nextNodes:
+    - dialog: I only joined for the money
+      nextNodes:
+      - dialog: I wanted to leave after I got enough cash but that damned contract!
+        nextNodes:
+        - dialog: Now, now I can finally rest
+          nextNodes:
+          - dialog: Though............
+            nextNodes:
+            - dialog: I have neither coffee nor games T-T
+              nextNodes:
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+    - dialog: I only joined for the money
+      nextNodes:
+      - dialog: I wanted to leave after I got enough cash but that damned contract!
+        nextNodes:
+        - dialog: Now, now I can finally rest
+          nextNodes:
+          - dialog: Though............
+            nextNodes:
+            - dialog: I have neither coffee nor games T-T
+              nextNodes:
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+      - dialog: I wanted to leave after I got enough cash but that damned contract!
+        nextNodes:
+        - dialog: Now, now I can finally rest
+          nextNodes:
+          - dialog: Though............
+            nextNodes:
+            - dialog: I have neither coffee nor games T-T
+              nextNodes:
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+        - dialog: Now, now I can finally rest
+          nextNodes:
+          - dialog: Though............
+            nextNodes:
+            - dialog: I have neither coffee nor games T-T
+              nextNodes:
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+          - dialog: Though............
+            nextNodes:
+            - dialog: I have neither coffee nor games T-T
+              nextNodes:
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+            - dialog: I have neither coffee nor games T-T
+              nextNodes:
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+              - dialog: You want me to open the door?
+                nextNodes:
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+                - dialog: If you get me some coffee and games then sure!
+                  nextNodes: []
+  - dialog: I only joined for the money
+    nextNodes:
+    - dialog: I wanted to leave after I got enough cash but that damned contract!
+      nextNodes:
+      - dialog: Now, now I can finally rest
+        nextNodes:
+        - dialog: Though............
+          nextNodes:
+          - dialog: I have neither coffee nor games T-T
+            nextNodes:
+            - dialog: You want me to open the door?
+              nextNodes:
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+    - dialog: I wanted to leave after I got enough cash but that damned contract!
+      nextNodes:
+      - dialog: Now, now I can finally rest
+        nextNodes:
+        - dialog: Though............
+          nextNodes:
+          - dialog: I have neither coffee nor games T-T
+            nextNodes:
+            - dialog: You want me to open the door?
+              nextNodes:
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+      - dialog: Now, now I can finally rest
+        nextNodes:
+        - dialog: Though............
+          nextNodes:
+          - dialog: I have neither coffee nor games T-T
+            nextNodes:
+            - dialog: You want me to open the door?
+              nextNodes:
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+        - dialog: Though............
+          nextNodes:
+          - dialog: I have neither coffee nor games T-T
+            nextNodes:
+            - dialog: You want me to open the door?
+              nextNodes:
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+          - dialog: I have neither coffee nor games T-T
+            nextNodes:
+            - dialog: You want me to open the door?
+              nextNodes:
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+            - dialog: You want me to open the door?
+              nextNodes:
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+              - dialog: If you get me some coffee and games then sure!
+                nextNodes: []
+  - dialog: I wanted to leave after I got enough cash but that damned contract!
+    nextNodes:
+    - dialog: Now, now I can finally rest
+      nextNodes:
+      - dialog: Though............
+        nextNodes:
+        - dialog: I have neither coffee nor games T-T
+          nextNodes:
+          - dialog: You want me to open the door?
+            nextNodes:
+            - dialog: If you get me some coffee and games then sure!
+              nextNodes: []
+    - dialog: Now, now I can finally rest
+      nextNodes:
+      - dialog: Though............
+        nextNodes:
+        - dialog: I have neither coffee nor games T-T
+          nextNodes:
+          - dialog: You want me to open the door?
+            nextNodes:
+            - dialog: If you get me some coffee and games then sure!
+              nextNodes: []
+      - dialog: Though............
+        nextNodes:
+        - dialog: I have neither coffee nor games T-T
+          nextNodes:
+          - dialog: You want me to open the door?
+            nextNodes:
+            - dialog: If you get me some coffee and games then sure!
+              nextNodes: []
+        - dialog: I have neither coffee nor games T-T
+          nextNodes:
+          - dialog: You want me to open the door?
+            nextNodes:
+            - dialog: If you get me some coffee and games then sure!
+              nextNodes: []
+          - dialog: You want me to open the door?
+            nextNodes:
+            - dialog: If you get me some coffee and games then sure!
+              nextNodes: []
+            - dialog: If you get me some coffee and games then sure!
+              nextNodes: []
+  - dialog: Now, now I can finally rest
+    nextNodes:
+    - dialog: Though............
+      nextNodes:
+      - dialog: I have neither coffee nor games T-T
+        nextNodes:
+        - dialog: You want me to open the door?
+          nextNodes:
+          - dialog: If you get me some coffee and games then sure!
+            nextNodes: []
+    - dialog: Though............
+      nextNodes:
+      - dialog: I have neither coffee nor games T-T
+        nextNodes:
+        - dialog: You want me to open the door?
+          nextNodes:
+          - dialog: If you get me some coffee and games then sure!
+            nextNodes: []
+      - dialog: I have neither coffee nor games T-T
+        nextNodes:
+        - dialog: You want me to open the door?
+          nextNodes:
+          - dialog: If you get me some coffee and games then sure!
+            nextNodes: []
+        - dialog: You want me to open the door?
+          nextNodes:
+          - dialog: If you get me some coffee and games then sure!
+            nextNodes: []
+          - dialog: If you get me some coffee and games then sure!
+            nextNodes: []
+  - dialog: Though............
+    nextNodes:
+    - dialog: I have neither coffee nor games T-T
+      nextNodes:
+      - dialog: You want me to open the door?
+        nextNodes:
+        - dialog: If you get me some coffee and games then sure!
+          nextNodes: []
+    - dialog: I have neither coffee nor games T-T
+      nextNodes:
+      - dialog: You want me to open the door?
+        nextNodes:
+        - dialog: If you get me some coffee and games then sure!
+          nextNodes: []
+      - dialog: You want me to open the door?
+        nextNodes:
+        - dialog: If you get me some coffee and games then sure!
+          nextNodes: []
+        - dialog: If you get me some coffee and games then sure!
+          nextNodes: []
+  - dialog: I have neither coffee nor games T-T
+    nextNodes:
+    - dialog: You want me to open the door?
+      nextNodes:
+      - dialog: If you get me some coffee and games then sure!
+        nextNodes: []
+    - dialog: You want me to open the door?
+      nextNodes:
+      - dialog: If you get me some coffee and games then sure!
+        nextNodes: []
+      - dialog: If you get me some coffee and games then sure!
+        nextNodes: []
+  - dialog: You want me to open the door?
+    nextNodes:
+    - dialog: If you get me some coffee and games then sure!
+      nextNodes: []
+    - dialog: If you get me some coffee and games then sure!
+      nextNodes: []
+  - dialog: If you get me some coffee and games then sure!
+    nextNodes: []
+  speakerName: Tod
+  onDialogStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8840091817725709621, guid: b1e9b6595b4144941a369ad39c0ddee4, type: 3}
+        m_TargetAssemblyTypeName: ObjectiveContainer, Assembly-CSharp
+        m_MethodName: AddObjective
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 58cc96937ceda3540b629f2b298dff7f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Objective, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
