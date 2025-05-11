@@ -23,22 +23,18 @@ public class Dialogable : MonoBehaviour, IInteractable
 
     void StartDialog()
     { 
-        switch (dialogIndex)
+        // Don't complete the quest during the dialog to give the quest
+        if (dialogIndex > 0)
+            oc.AttemptCompleteDeliveryTask();
+        
+        if (!questComplete && dialogIndex == 2)
+            dialogIndex = 1;
+        
+        if (dialogIndex == 1 && oc.QuestFinished())
         {
-            case 1:
-                if (oc.AttemptCompleteDeliveryTask())
-                {
-                    dialogIndex = 2;
-                    questComplete = true;
-                    onSatisfied?.Invoke();
-                }
-
-                break;
-
-            case 2:
-                if (!questComplete)
-                    dialogIndex = 1;
-                break;
+            dialogIndex = 2;
+            questComplete = true;
+            onSatisfied?.Invoke();
         }
 
         if (questDialog.Length < 1)

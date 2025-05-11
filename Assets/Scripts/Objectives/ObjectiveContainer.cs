@@ -22,6 +22,20 @@ public class ObjectiveContainer : MonoBehaviour
     {
         objective.CompleteByName("Pickup " + pickup.name);
     }
+
+
+    public bool QuestFinished()
+    {
+        foreach (Task task in objective.tasks)
+        {
+            if (!task.IsCompleted && task.taskName.Contains("Bring"))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
     
     
     public bool AttemptCompleteDeliveryTask()

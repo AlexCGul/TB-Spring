@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a2ef53f-44da-48a2-b017-d066b1eeb86a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TB-Spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TB-Spring/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Combined.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Combined.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test/TestAfter.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test/TestAfter.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test/TestDuring.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test/TestDuring.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test/TestStart.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Dialog/Test/TestStart.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Objectives/TestObjective.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Objectives/TestObjective.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Pickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Pickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objectives/ObjectiveContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objectives/ObjectiveContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Screens/GUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Screens/GUI.uxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +165,7 @@
       <workItem from="1745914335239" duration="16652000" />
       <workItem from="1746095241378" duration="6326000" />
       <workItem from="1746772195655" duration="9943000" />
-      <workItem from="1746869374321" duration="7895000" />
+      <workItem from="1746869374321" duration="10692000" />
     </task>
     <servers />
   </component>
@@ -204,37 +193,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Objectives/ObjectiveContainer.cs</url>
-          <line>28</line>
-          <properties documentPath="F:\projects\TB_Spring\TB-Spring\Assets\Scripts\Objectives\ObjectiveContainer.cs" containingFunctionPresentation="Method 'AttemptCompleteDeliveryTask'">
-            <startOffsets>
-              <option value="679" />
-            </startOffsets>
-            <endOffsets>
-              <option value="694" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Objectives/ObjectiveContainer.cs</url>
-          <line>22</line>
-          <properties documentPath="F:\projects\TB_Spring\TB-Spring\Assets\Scripts\Objectives\ObjectiveContainer.cs" containingFunctionPresentation="Method 'AttemptCompletePickupTask'">
-            <startOffsets>
-              <option value="552" />
-            </startOffsets>
-            <endOffsets>
-              <option value="602" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
